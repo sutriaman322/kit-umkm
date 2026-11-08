@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ramai Tapi Tidak Ada Sisa - Hitung Ulang HPP Usaha Anda</title>
+<meta name="description" content="Chat ramai, order lancar, tapi rekening tidak bertambah. Tiga penyebab uang habis di usaha kecil, dan cara menghitungnya ulang dengan benar.">
+<meta name="theme-color" content="#234D3B">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Ramai Tapi Tidak Ada Sisa">
+<meta property="og:description" content="Tiga penyebab uang habis di usaha kecil - dan cara menghitungnya ulang.">
+<meta property="og:image" content="cover-1080x1080.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23234D3B'/%3E%3Cpath d='M16 7v18M11 12h10M11 20h10' stroke='%23D2691E' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+:root{
+  --cream:#FBF6EE; --sand:#EFE3D0; --green:#234D3B; --green-d:#183829;
+  --orange:#D2691E; --orange-d:#B0521A; --ink:#23201C; --muted:#7A6E60;
+  --line:#E4D6C0; --white:#fff;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --serif:Georgia,"Times New Roman",serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:var(--cream);font-size:16px;line-height:1.62}
+img{max-width:100%;display:block;height:auto}
+.wrap{width:100%;max-width:920px;margin:0 auto;padding:0 20px}
+section{padding:42px 0}
+h1,h2,h3{font-family:var(--serif);line-height:1.2;color:var(--green);font-weight:700}
+h1{font-size:clamp(29px,7.2vw,45px)}
+h2{font-size:clamp(23px,5.4vw,33px);margin-bottom:12px}
+h3{font-size:18px;margin-bottom:6px}
+p{margin-bottom:13px}
+p:last-child{margin-bottom:0}
+.eyebrow{display:inline-block;font-size:11.5px;letter-spacing:.15em;text-transform:uppercase;
+  font-weight:700;color:var(--orange);margin-bottom:12px}
+.lead{font-size:17px;color:#3D362E}
+
+.hb{background:linear-gradient(170deg,#FBF6EE 0%,#F4E9D8 100%);
+  border-bottom:3px solid var(--orange);padding:48px 0 40px}
+.hb .quote{border-left:4px solid var(--orange);padding:2px 0 2px 16px;margin:0 0 22px;
+  font-family:var(--serif);font-size:19px;color:var(--green);font-style:italic}
+.hb p{max-width:580px;color:#423A31}
+.hb .shot{margin-top:26px;border-radius:12px;overflow:hidden;
+  border:1px solid var(--line);box-shadow:0 14px 34px rgba(35,77,59,.14)}
+
+.btn{display:block;width:100%;min-height:52px;padding:15px 22px;border-radius:9px;
+  background:var(--orange);color:#fff;font-weight:700;font-size:17px;text-align:center;
+  text-decoration:none;border:2px solid var(--orange);margin-top:18px;transition:background .15s}
+.btn:hover,.btn:focus{background:var(--orange-d);border-color:var(--orange-d)}
+.btn.alt{background:transparent;color:var(--green);border-color:var(--green);margin-top:10px;font-weight:600}
+.btn.alt:hover{background:rgba(35,77,59,.08)}
+.btnnote{text-align:center;font-size:13px;color:var(--muted);margin-top:10px}
+
+.diag{counter-reset:d;list-style:none;margin-top:20px}
+.diag li{counter-increment:d;position:relative;padding:18px 18px 18px 60px;
+  background:var(--white);border:1px solid var(--line);border-radius:10px;margin-bottom:10px}
+.diag li::before{content:counter(d);position:absolute;left:16px;top:17px;width:32px;height:32px;
+  border-radius:8px;background:var(--green);color:#fff;font-weight:700;font-family:var(--serif);
+  font-size:17px;display:flex;align-items:center;justify-content:center}
+.diag strong{display:block;color:var(--green);font-size:16px;margin-bottom:3px}
+.diag span{font-size:14.5px;color:#4A4238}
+
+.proof{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.tbl{width:100%;border-collapse:collapse;margin-top:18px;font-size:14.5px}
+.tbl caption{text-align:left;font-size:13px;color:var(--muted);padding-bottom:8px;font-style:italic}
+.tbl th,.tbl td{padding:11px 10px;border-bottom:1px solid var(--line);text-align:left}
+.tbl th{background:var(--sand);font-size:12.5px;text-transform:uppercase;letter-spacing:.05em;
+  color:var(--green);font-weight:700}
+.tbl td:last-child,.tbl th:last-child{text-align:right;font-variant-numeric:tabular-nums}
+.tbl tr.total td{font-weight:700;color:var(--green);background:#FAF3E7;border-bottom:2px solid var(--green);font-size:15px}
+.tbl tr.hi td{font-weight:700;color:var(--orange-d);background:#FDF1E4;font-size:15px}
+.tblwrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.tblnote{font-size:12.5px;color:var(--muted);margin-top:10px;font-style:italic}
+
+.listb{list-style:none;margin-top:18px}
+.listb li{display:flex;gap:14px;padding:14px 0;border-bottom:1px dashed var(--line);align-items:flex-start}
+.listb li:last-child{border-bottom:0}
+.listb b{flex:0 0 92px;color:var(--orange);font-family:var(--serif);font-size:15px}
+.listb span{font-size:14.5px;color:#4A4238}
+.listb strong{color:var(--green)}
+
+.pb{background:var(--green-d);color:#fff;text-align:center;padding:48px 0}
+.pb h2{color:#fff}
+.pb .amt{font-family:var(--serif);font-size:clamp(42px,12vw,60px);font-weight:700;line-height:1;margin:14px 0 8px}
+.pb .amt i{font-size:20px;color:#A9C3B4;font-style:normal;vertical-align:super}
+.pb .per{color:#A9C3B4;font-size:14px;margin-bottom:20px}
+.pb .btn{max-width:420px;margin:0 auto}
+.pb .btnnote{color:#A9C3B4}
+
+.fq details{background:var(--white);border:1px solid var(--line);border-radius:9px;margin-bottom:9px}
+.fq summary{cursor:pointer;padding:15px 44px 15px 16px;font-weight:600;color:var(--green);
+  font-size:15.5px;position:relative;list-style:none}
+.fq summary::-webkit-details-marker{display:none}
+.fq summary::after{content:"+";position:absolute;right:16px;top:50%;transform:translateY(-50%);
+  color:var(--orange);font-size:21px;line-height:1}
+.fq details[open] summary::after{content:"-"}
+.fq details[open] summary{border-bottom:1px solid var(--line)}
+.fq .ans{padding:13px 16px 16px;font-size:14.5px;color:#4A4238}
+
+.fin{background:var(--white);text-align:center;border-top:1px solid var(--line);padding:48px 0}
+.fin .btn{margin:20px auto 0}
+.wa{display:inline-block;margin-top:16px;font-size:14.5px;color:var(--green);
+  text-decoration:none;border-bottom:2px solid var(--orange);padding-bottom:2px}
+footer{background:var(--green-d);color:#A9C3B4;font-size:12.5px;padding:28px 0;text-align:center}
+footer p{margin-bottom:6px}
+footer a{color:#D8E6DC}
+
+@media (min-width:720px){
+  section{padding:60px 0}
+  .hb{padding:70px 0 56px}
+  .btn{display:inline-block;width:auto;min-width:290px}
+  .pb .btn,.fin .btn{display:inline-block;width:auto}
+  .listb b{flex-basis:110px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="hb">
+  <div class="wrap">
+    <span class="eyebrow">Untuk penjual yang sudah jalan, bukan pemula</span>
+    <p class="quote">&ldquo;Chat ramai, order lancar. Tapi kok uangnya tidak pernah tersisa?&rdquo;</p>
+    <h1>Ramai tapi tidak ada sisa biasanya bukan soal sepi pembeli.</h1>
+    <p style="margin-top:16px">Kalau Anda sudah berjualan beberapa bulan, pembeli biasanya bukan masalah utama. Yang bermasalah adalah angka yang tidak pernah Anda lihat: harga pokok yang dihitung kurang lengkap, harga jual yang mengikuti pasar, dan pengeluaran kecil yang tidak pernah dicatat.</p>
+    <p>Tiga hal itu tidak terasa. Yang terasa hanya satu: kerja terus, uang tidak menumpuk.</p>
+    <a class="btn" href="https://link.id/GANTI-DENGAN-TAUTAN-PRODUK-ANDA">Hitung ulang HPP saya - Rp49.000</a>
+    <a class="btn alt" href="#bukti">Lihat contoh hitungannya</a>
+    <div class="shot">
+      <img src="cover-1080x1080.png" width="1080" height="1080" alt="Sampul Kit Jualan UMKM: kalkulator HPP, laporan keuangan, stok, dan 150 prompt AI">
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <span class="eyebrow">Diagnosis</span>
+    <h2>Tiga penyebab uang habis</h2>
+    <p class="lead">Bukan teori. Ini tiga hal yang paling sering ditemukan ketika penjual duduk menghitung ulang angkanya.</p>
+    <ol class="diag">
+      <li>
+        <strong>HPP dihitung kurang komponen</strong>
+        <span>Bahan dan kemasan masuk. Tenaga kerja sendiri tidak dihitung. Listrik, gas, penyusutan alat, dan biaya administrasi tidak dihitung. Padahal semuanya keluar dari kantong yang sama. Efeknya: harga jual terlihat untung, kenyataannya hanya kembali modal.</span>
+      </li>
+      <li>
+        <strong>Harga jual mengikuti pasar, bukan biaya sendiri</strong>
+        <span>Melihat pesaing menjual lebih murah, lalu ikut turun. Pesaing mungkin membeli bahan dalam jumlah jauh lebih besar, atau menghitung biayanya juga kurang lengkap. Menyamakan harga dengan mereka berarti menanggung selisihnya sendiri.</span>
+      </li>
+      <li>
+        <strong>Tidak ada catatan, jadi tidak ada yang bisa dievaluasi</strong>
+        <span>Tanpa catatan, produk yang sebenarnya merugikan tetap dijual karena terlihat paling laris. Yang paling laris dan yang paling menguntungkan sering bukan produk yang sama.</span>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="proof" id="bukti">
+  <div class="wrap">
+    <span class="eyebrow">Bukti</span>
+    <h2>Satu produk dihitung ulang</h2>
+    <p class="lead">Ini contoh lengkap dari panduan: kopi susu botol 250 ml, satu batch 20 botol. Perhatikan di baris mana angkanya berubah.</p>
+
+    <div class="tblwrap">
+      <table class="tbl">
+        <caption>Contoh ilustrasi perhitungan - bukan hasil jaminan penjualan.</caption>
+        <thead>
+          <tr><th>Komponen</th><th>Nilai</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Bahan (kopi, susu, gula, es)</td><td>Rp60.000</td></tr>
+          <tr><td>Kemasan (botol, tutup, label)</td><td>Rp36.000</td></tr>
+          <tr><td>Tenaga kerja 2 jam</td><td>Rp30.000</td></tr>
+          <tr><td>Overhead (listrik, air, penyusutan)</td><td>Rp9.000</td></tr>
+          <tr class="total"><td>Total biaya batch 20 botol</td><td>Rp135.000</td></tr>
+          <tr><td>HPP produksi per botol</td><td>Rp6.750</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p style="margin-top:24px">Sampai di sini, banyak penjual berhenti menghitung. Padahal HPP per botol belum termasuk biaya yang muncul saat barangnya dikirim dan dibayar:</p>
+
+    <div class="tblwrap">
+      <table class="tbl">
+        <thead>
+          <tr><th>Biaya per transaksi</th><th>Nilai</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Kemasan kirim (kardus, bubble wrap, es gel)</td><td>Rp4.500</td></tr>
+          <tr><td>Komisi marketplace 5%</td><td>Rp1.050</td></tr>
+          <tr><td>Cadangan barang rusak 2%</td><td>Rp420</td></tr>
+          <tr class="total"><td>HPP per transaksi</td><td>Rp12.720</td></tr>
+          <tr class="hi"><td>Harga jual usulan (margin 40%)</td><td>Rp21.200</td></tr>
+          <tr class="hi"><td>Laba bersih per botol</td><td>Rp8.480</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="tblnote">Biaya tetap Rp1.800.000 per bulan membagi laba itu menjadi titik impas 213 botol per bulan - sekitar 8 botol per hari.</p>
+
+    <p style="margin-top:22px">Sekarang perhatikan apa yang terjadi kalau harganya diturunkan menjadi Rp15.000 karena mengikuti pesaing: laba per botol jatuh ke Rp2.700, dan titik impasnya melonjak menjadi 667 botol per bulan. Penjualannya bisa terlihat lebih ramai, sementara uangnya justru lebih sedikit.</p>
+
+    <p>Inilah selisih antara ramai dan untung. Dan selisih itu hanya terlihat kalau angkanya dihitung.</p>
+
+    <a class="btn" href="https://link.id/GANTI-DENGAN-TAUTAN-PRODUK-ANDA">Hitung angka produk saya sendiri</a>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="eyebrow">Alatnya</span>
+    <h2>Yang Anda dapat untuk menutup kebocoran itu</h2>
+    <ul class="listb">
+      <li><b>Hitung</b><span><strong>Kalkulator HPP</strong> - isi sel kuning, harga jual usulan, laba per unit, dan titik impas muncul sendiri. Ada tabel harga untuk 8 tingkat margin.</span></li>
+      <li><b>Catat</b><span><strong>Laporan Keuangan</strong> - kas harian, laba rugi bulanan otomatis, dashboard 6 bulan. Tahu untung atau rugi tanpa menghitung manual.</span></li>
+      <li><b>Kontrol</b><span><strong>Stok &amp; Invoice</strong> - peringatan restock otomatis, invoice yang totalnya terhitung sendiri.</span></li>
+      <li><b>Panduan</b><span><strong>17 halaman, 10 bab</strong> - memilih produk, menetapkan harga, foto, copywriting, alur WhatsApp, iklan kecil, rencana 30 hari.</span></li>
+      <li><b>Konten</b><span><strong>150 prompt AI</strong> - riset pasar, harga, caption, script video, negosiasi WhatsApp, iklan. Siap tempel ke ChatGPT, Gemini, Claude, atau DeepSeek.</span></li>
+      <li><b>Rutin</b><span><strong>Checklist Harian</strong> (bonus) - evaluasi pagi, siang, malam, mingguan. Boleh dibagikan gratis.</span></li>
+    </ul>
+    <p class="tblnote">Semua file .xlsx dan .pdf. Bisa dibuka di HP lewat Google Sheets dan aplikasi PDF bawaan.</p>
+  </div>
+</section>
+
+<section class="pb" id="harga">
+  <div class="wrap">
+    <span class="eyebrow">Harga</span>
+    <h2>Mulai dari satu angka: HPP Anda</h2>
+    <div class="amt"><i>Rp</i>49.000</div>
+    <div class="per">Sekali bayar &middot; akses seumur hidup &middot; untuk usaha Anda sendiri</div>
+    <a class="btn" href="https://link.id/GANTI-DENGAN-TAUTAN-PRODUK-ANDA">Hitung HPP saya sekarang</a>
+    <div class="btnnote">Sembilan file dalam satu paket ZIP.</div>
+  </div>
+</section>
+
+<section class="fq">
+  <div class="wrap">
+    <span class="eyebrow">Pertanyaan</span>
+    <h2>Lima hal yang biasanya ditanya</h2>
+
+    <details>
+      <summary>Kenapa saya merasa untung tapi uangnya habis?</summary>
+      <div class="ans"><p>Karena saldo bertambah bukan berarti laba. Sebagian saldo itu modal yang harus berputar lagi untuk stok berikutnya. Laba baru ada setelah HPP, biaya operasional, biaya iklan, dan biaya administrasi dikurangi. Kalau salah satu komponen tidak dihitung, kerugiannya hanya tertunda.</p></div>
+    </details>
+
+    <details>
+      <summary>Bisa dibuka di HP?</summary>
+      <div class="ans"><p>Bisa. File .xlsx terbaik dibuka dengan aplikasi gratis Google Sheets atau WPS Office. File .pdf dengan aplikasi PDF bawaan.</p></div>
+    </details>
+
+    <details>
+      <summary>Rumusnya masih jalan setelah angka saya ubah?</summary>
+      <div class="ans"><p>Ya. Semua perhitungan memakai rumus, bukan angka mati. Yang perlu Anda isi hanya sel berwarna kuning.</p></div>
+    </details>
+
+    <details>
+      <summary>Bagaimana file dikirim setelah saya bayar?</summary>
+      <div class="ans"><p>Dalam satu paket ZIP berisi 9 file, lewat halaman pesanan atau tautan unduhan yang dikirim setelah pembayaran terkonfirmasi.</p></div>
+    </details>
+
+    <details>
+      <summary>Boleh dijual ulang atau dipakai untuk banyak usaha?</summary>
+      <div class="ans"><p>Untuk usaha Anda sendiri, tanpa batas jumlah produk. Tidak boleh dijual ulang. Yang boleh dibagikan gratis hanya file Checklist Harian.</p></div>
+    </details>
+  </div>
+</section>
+
+<section class="fin">
+  <div class="wrap">
+    <h2>Satu angka malam ini lebih berguna daripada tiga bulan menebak</h2>
+    <p class="lead">Hitung HPP satu produk Anda. Kalau angkanya tidak masuk, Anda tahu harus mengubah apa - sebelum uangnya habis lagi.</p>
+    <a class="btn" href="https://link.id/GANTI-DENGAN-TAUTAN-PRODUK-ANDA">Beli Kit Jualan UMKM - Rp49.000</a>
+    <a class="wa" href="https://wa.me/6281234567890?text=Halo%2C%20saya%20mau%20tanya%20soal%20Kit%20Jualan%20UMKM">Tanya dulu lewat WhatsApp</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p><strong style="color:#fff">Kit Jualan UMKM</strong> &middot; Edisi 2026</p>
+    <p>Contoh perhitungan di halaman ini adalah ilustrasi, bukan jaminan hasil penjualan.</p>
+    <p>Dipakai untuk usaha sendiri. Dilarang dijual ulang.</p>
+  </div>
+</footer>
+
+</body>
+</html>
+
